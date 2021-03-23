@@ -9,9 +9,10 @@ namespace EgdeBookingSystemV2.Models
     public class Location
     {
         public int ID { get; set; }
-        [Required] 
+        [Required]
         [Display(Name = "Lokasjon")]
         [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
-    
+
+    }
 }
