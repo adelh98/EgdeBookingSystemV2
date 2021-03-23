@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace EgdeBookingSystemV2.Models
+{
+    public class Booking
+    {
+        public int ID { get; set; }
+        [Required]
+        [Display(Name = "Brukernavn")]
+        [StringLength(100, MinimumLength = 3)]
+        public string UserEmail { get; set; }
+        [Required]
+        [Display(Name = "Startdato")]
+        public DateTime StartDate { get; set; }
+        [Required]
+        [Display(Name = "Sluttdato")]
+        public DateTime EndDate { get; set; }
+        [Required]
+        public int EquipmentID { get; set; }
+        public Equipment Equipment { get; set; }
+    }
+}
+
+
