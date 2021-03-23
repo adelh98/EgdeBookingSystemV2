@@ -15,3 +15,5 @@ namespace EgdeBookingSystemV2.Models
         public string Name { get; set; }
 
     }
+
+}

@@ -30,7 +30,7 @@ namespace EgdeBookingSystemV2
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    var context = services.GetRequiredService<EgdeBookingSystemConnection>();
                     //context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }

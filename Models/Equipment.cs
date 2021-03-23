@@ -20,10 +20,12 @@ namespace EgdeBookingSystemV2.Models
         public string Info { get; set; }
 
         [Required] //Oprettet objekter fra andre klasser for å få tilgang til å hente data(felter) fra de.
+        [Display(Name = "Kategori")]
         public int CategoryID { get; set; }
         public Category Category { get; set; }
 
         [Required]
+        [Display(Name = "Lokasjon")]
         public int LocationID { get; set; }
         public Location Location { get; set; }
 
