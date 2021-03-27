@@ -44,6 +44,7 @@ namespace EgdeBookingSystemV2.Pages.Bookings
                 .Where(b => b.EndDate >= DateTime.Now)
                 .OrderBy(b => b.StartDate)
                 .ToListAsync();
+
             return Page();
         }
 
@@ -53,22 +54,29 @@ namespace EgdeBookingSystemV2.Pages.Bookings
         public async Task<IActionResult> OnPostAsync(int? id)
         {
 
-
             BookingList = await _context.Bookings
                 .Where(b => b.EquipmentID == id)
                 .Where(b => b.EndDate >= DateTime.Now)
                 .OrderBy(b => b.StartDate)
                 .ToListAsync();
 
+            if (Booking.StartDate > Booking.EndDate)
+            {
+                return Page();
+            }
+
             if (BookingList != null)
             {
+
                 foreach (Booking b in BookingList)
                 {
                     if (b.EquipmentID == Booking.EquipmentID)
                     {
-                        if (((Booking.StartDate < b.StartDate) && (Booking.EndDate <= b.StartDate)) || ((Booking.StartDate >= b.EndDate) && (Booking.EndDate > b.EndDate)))
+                        if (((Booking.StartDate < b.StartDate) && (Booking.EndDate <= b.StartDate)) 
+                            || ((Booking.StartDate >= b.EndDate) && (Booking.EndDate > b.EndDate)))
                         {
                             continue;
+                      
                         }
                         else
                         {
