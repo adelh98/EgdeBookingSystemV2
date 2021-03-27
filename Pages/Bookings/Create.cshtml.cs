@@ -19,8 +19,9 @@ namespace EgdeBookingSystemV2.Pages.Bookings
         {
             _context = context;
         }
-
+        [BindProperty]
         public Equipment Equipment { get; set; }
+        public IList<Booking> BookingList { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,26 +31,59 @@ namespace EgdeBookingSystemV2.Pages.Bookings
             }
 
             Equipment = await _context.Equipments
+                    .AsNoTracking()
                     .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Equipment == null)
             {
                 return NotFound();
             }
+
+            BookingList = await _context.Bookings
+                .Where(b => b.EquipmentID == id)
+                .Where(b => b.EndDate >= DateTime.Now)
+                .OrderBy(b => b.StartDate)
+                .ToListAsync();
             return Page();
         }
 
         [BindProperty]
         public Booking Booking { get; set; }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (!ModelState.IsValid)
+
+
+            BookingList = await _context.Bookings
+                .Where(b => b.EquipmentID == id)
+                .Where(b => b.EndDate >= DateTime.Now)
+                .OrderBy(b => b.StartDate)
+                .ToListAsync();
+
+            if (BookingList != null)
             {
-                return Page();
+                foreach (Booking b in BookingList)
+                {
+                    if (b.EquipmentID == Booking.EquipmentID)
+                    {
+                        if (((Booking.StartDate < b.StartDate) && (Booking.EndDate <= b.StartDate)) || ((Booking.StartDate >= b.EndDate) && (Booking.EndDate > b.EndDate)))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return Page();
+                        }
+                    }
+                }
             }
+
+            //var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
             _context.Bookings.Add(Booking);
             await _context.SaveChangesAsync();
