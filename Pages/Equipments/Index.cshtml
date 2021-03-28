@@ -5,11 +5,39 @@
     ViewData["Title"] = "Index";
 }
 
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+
 <h1>Index</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar" />
+    </p>
+    @*<p>
+        <label class="control-label"></label>
+        <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
+            <option value="">  </option>
+        </select>
+    </p>
+    <p>
+        <label class="control-label"></label>
+        <select asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
+            <option value="">  </option>
+        </select>
+    </p>
+    <p>
+        <label class="control-label"></label>
+        <select asp-for="BookedFilter" asp-items="Model.Status" oninput="this.form.submit();">
+            <option value="">  </option>
+        </select>
+    </p>*@
+
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -29,7 +57,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Equipment) {
+@foreach (var item in Model.EquipmentSearch) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -52,3 +80,15 @@
 }
     </tbody>
 </table>
+
+<script type="text/javascript">
+    (function ($) {
+        $.fn.focusTextToEnd = function () {
+            this.focus();
+            var $thisVal = this.val();
+            this.val('').val($thisVal);
+            return this;
+        }
+    }(jQuery));
+    $("#autofocusLastChar").focusTextToEnd();
+</script>
