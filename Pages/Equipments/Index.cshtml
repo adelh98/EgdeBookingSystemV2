@@ -10,14 +10,21 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Legg til utstyr</a>
 </p>
+<p>
+    <a asp-page="/Locations/Create">Legg til lokasjon</a>
+</p>
+<p>
+    <a asp-page="/Categories/Create">Legg til kategori</a>
+</p>
+
 
 <form>
     <p>
-        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar" />
+        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar"/>
     </p>
-    @*<p>
+    <p>
         <label class="control-label"></label>
         <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
             <option value="">  </option>
@@ -29,14 +36,8 @@
             <option value="">  </option>
         </select>
     </p>
-    <p>
-        <label class="control-label"></label>
-        <select asp-for="BookedFilter" asp-items="Model.Status" oninput="this.form.submit();">
-            <option value="">  </option>
-        </select>
-    </p>*@
-
 </form>
+
 
 <table class="table">
     <thead>

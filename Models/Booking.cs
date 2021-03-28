@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace EgdeBookingSystemV2.Models
         [Required]
         [Display(Name = "Startdato")]
         public DateTime StartDate { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vennligst spesifiser sluttdato")]
         [Display(Name = "Sluttdato")]
         public DateTime EndDate { get; set; }
         [Required]
