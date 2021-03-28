@@ -86,5 +86,10 @@ else
     <h4>Det er ingen bookinger av dette utstyret</h4>
 }
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+        <script src="~/lib/jquery.js"></script>
+        <script src="~/lib/jquery.validate.js"></script>
+        <script src="~/lib/jquery.validate.unobtrusive.js"></script>
+
 }

@@ -7,7 +7,7 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
-<h1>test</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-page="Create">Legg til utstyr</a>
@@ -19,13 +19,11 @@
     <a asp-page="/Categories/Create">Legg til kategori</a>
 </p>
 
-<h1> hei</h1>
 
 <form>
     <p>
         Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar"/>
     </p>
-
     <p>
         <label class="control-label"></label>
         <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
@@ -39,12 +37,7 @@
         </select>
     </p>
 </form>
-<form>
-    <p>
-        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar" />
-    </p>
-</form>
-<h1>hei</h1>
+
 
 <table class="table">
     <thead>

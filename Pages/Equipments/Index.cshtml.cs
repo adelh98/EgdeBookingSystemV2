@@ -69,11 +69,11 @@ namespace EgdeBookingSystemV2.Pages.Equipments
             }
             if (!string.IsNullOrEmpty(CategoryFilter))
             {
-                equipments = equipments.Where(s => s.Category.Name.Contains(CategoryFilter));
+                equipments = equipments.Where(s => s.Category.Name.Equals(CategoryFilter));
             }
             if (!string.IsNullOrEmpty(LocationFilter))
             {
-                equipments = equipments.Where(s => s.Location.Name.Contains(LocationFilter));
+                equipments = equipments.Where(s => s.Location.Name.Equals(LocationFilter));
             }
 
             EquipmentSearch = await equipments.ToListAsync();

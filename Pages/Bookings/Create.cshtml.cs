@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using EgdeBookingSystemV2.Data;
 using EgdeBookingSystemV2.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace EgdeBookingSystemV2.Pages.Bookings
 {
@@ -22,6 +23,10 @@ namespace EgdeBookingSystemV2.Pages.Bookings
         [BindProperty]
         public Equipment Equipment { get; set; }
         public IList<Booking> BookingList { get; set; }
+        [Required]
+      //  [Remote("ValidateDates", "Validator", ErrorMessage = "Du kan ikke booke bakover i tid. Sluttdato må komme etter startdato")]
+        [BindProperty]
+        public DateTime EndDate { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
