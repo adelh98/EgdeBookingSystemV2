@@ -18,14 +18,25 @@ namespace EgdeBookingSystemV2.Pages.UserView
         {
             _context = context;
         }
-
-        public IList<Equipment> Equipment { get;set; }
+        public IList<Equipment> Equipment { get; set; }
+        public IList<Equipment> EquipmentSearch { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
 
         public async Task OnGetAsync()
         {
             Equipment = await _context.Equipments
                 .Include(e => e.Category)
                 .Include(e => e.Location).ToListAsync();
+
+            var equipments = from n in _context.Equipments
+                             select n;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                equipments = equipments.Where(s => s.Name.Contains(SearchString));
+            }
+
+            EquipmentSearch = await equipments.ToListAsync();
         }
     }
 }
