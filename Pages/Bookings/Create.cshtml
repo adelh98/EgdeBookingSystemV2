@@ -43,7 +43,7 @@
     <a asp-page="Index">Tilbake til listen</a>
 </div>
 
-@if (Model.BookingList != null)
+@if (Model.BookingList.Count != 0)
 {
     <div>
         <h4>Aktive bookinger av utstyret:</h4>
