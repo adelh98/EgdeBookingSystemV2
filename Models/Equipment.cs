@@ -10,12 +10,12 @@ namespace EgdeBookingSystemV2.Models
     {
         public int ID { get; set; }
 
-        [Required] //Må fylles, med min og maks tegn.
-        [Display(Name = "Navn")]
-        [StringLength(50, MinimumLength = 3)]
+        [Required(ErrorMessage = "Utstyrsnavn er påkrevd")] //Må fylles, med min og maks tegn.
+        [Display(Name = "Utstyrsnavn")]
+        [StringLength(50, ErrorMessage = "Utstyrsnavnet må bestå av 3 til 50 tegn", MinimumLength = 3)]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Informasjon/detaljer om utstyret er påkrevd")]
         [StringLength(50, MinimumLength = 3)]
         public string Info { get; set; }
 

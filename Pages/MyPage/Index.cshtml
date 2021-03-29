@@ -1,0 +1,65 @@
+﻿@page
+@model EgdeBookingSystemV2.Pages.MyPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Mine aktive bookinger</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+@if (Model.BookingList.Count != 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingList[0].UserEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingList[0].Equipment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingList[0].StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingList[0].EndDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.BookingList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Equipment.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td>
+                        @*<a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |*@
+                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    }
+else
+{
+    <h2>Det er ingen aktive bookinger!</h2>
+}
+
+

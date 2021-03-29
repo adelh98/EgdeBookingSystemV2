@@ -9,7 +9,7 @@ using EgdeBookingSystemV2.Data;
 using EgdeBookingSystemV2.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace EgdeBookingSystemV2.Pages.Equipments
+namespace EgdeBookingSystemV2.Pages.UserView
 {
     public class IndexModel : PageModel
     {
@@ -20,12 +20,10 @@ namespace EgdeBookingSystemV2.Pages.Equipments
             _context = context;
         }
 
-
         public IList<Equipment> EquipmentSearch { get; set; }
         public IList<Equipment> Equipment { get; set; }
         public SelectList Categories { get; set; }
         public SelectList Locations { get; set; }
-        public SelectList Status { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
@@ -35,10 +33,6 @@ namespace EgdeBookingSystemV2.Pages.Equipments
 
         [BindProperty(SupportsGet = true)]
         public string LocationFilter { get; set; }
-
-        [BindProperty(SupportsGet = true)]
-        public string BookedFilter { get; set; } = null;
-
 
 
         public async Task OnGetAsync()
@@ -57,10 +51,6 @@ namespace EgdeBookingSystemV2.Pages.Equipments
                                                select l.Name;
             Locations = new SelectList(await locationQuery.ToListAsync());
 
-            string[] Statuses = { "ledig", "opptatt" };
-            Status = new SelectList(Statuses);
-
-
             var equipments = from n in _context.Equipments
                              select n;
             if (!string.IsNullOrEmpty(SearchString))
@@ -78,10 +68,5 @@ namespace EgdeBookingSystemV2.Pages.Equipments
 
             EquipmentSearch = await equipments.ToListAsync();
         }
-
     }
 }
-
-
-
-

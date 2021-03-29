@@ -1,5 +1,5 @@
 ﻿@page
-@model EgdeBookingSystemV2.Pages.Equipments.IndexModel
+@model EgdeBookingSystemV2.Pages.UserView.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -7,22 +7,9 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Legg til utstyr</a>
-</p>
-<p>
-    <a asp-page="/Locations/Create">Legg til lokasjon</a>
-</p>
-<p>
-    <a asp-page="/Categories/Create">Legg til kategori</a>
-</p>
-
-
 <form>
     <p>
-        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar"/>
+        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar" />
     </p>
     <p>
         <label class="control-label"></label>
@@ -37,7 +24,6 @@
         </select>
     </p>
 </form>
-
 
 <table class="table">
     <thead>
@@ -73,9 +59,8 @@
                 @Html.DisplayFor(modelItem => item.Location.Name)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="/Bookings/Create" asp-route-id="@item.ID">Book</a>
             </td>
         </tr>
 }
