@@ -14,7 +14,7 @@ namespace EgdeBookingSystemV2.Models
         [Display(Name = "Brukernavn")]
         [StringLength(100, MinimumLength = 3)]
         public string UserEmail { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vennligst spesifiser startdato")]
         [Display(Name = "Startdato")]
         public DateTime StartDate { get; set; }
         [Required(ErrorMessage = "Vennligst spesifiser sluttdato")]

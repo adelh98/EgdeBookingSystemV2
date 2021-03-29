@@ -9,9 +9,9 @@ namespace EgdeBookingSystemV2.Models
     public class Category
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Dette feltet er påkrevd")]
-        [Display(Name = "Navn")]
-       // [StringLength(50, ErrorMessage = "Navnet er for langt, maksimalt antall karakterer er 50.", MinimumLength = 3, ErrorMessage = "Navnet er for kort. Minst 3 karakterer.")]
+        [Required(ErrorMessage = "Kategorinavn er påkrevd")]
+        [Display(Name = "Kategorinavn")]
+        [StringLength(50, ErrorMessage = "Kategorinavnet må bestå av 3 til 50 tegn", MinimumLength = 3)]
         public string Name { get; set; }
 
     }
