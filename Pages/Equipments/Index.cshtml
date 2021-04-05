@@ -7,14 +7,14 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
-<h1>Index</h1>
+<h1>Alt Utstyr</h1>
 
 <p>
-    <a asp-page="Create" class="btn btn-egde-small ">Legg til utstyr</a>
+    <a asp-page="Create" class="btn btn-egde-blå ">Legg til utstyr</a>
 
-    <a asp-page="/Locations/Create" class="btn btn-egde-small ">Legg til lokasjon</a>
+    <a asp-page="/Locations/Create" class="btn btn-egde-blå ">Legg til lokasjon</a>
 
-    <a asp-page="/Categories/Create" class="btn btn-egde-small">Legg til kategori</a>
+    <a asp-page="/Categories/Create" class="btn btn-egde-blå">Legg til kategori</a>
 </p>
 
 
@@ -46,10 +46,10 @@
                 @Html.DisplayNameFor(model => model.Equipment[0].Info)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Equipment[0].Category)
+                @Html.DisplayNameFor(model => model.Equipment[0].Category.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Equipment[0].Location)
+                @Html.DisplayNameFor(model => model.Equipment[0].Location.Name)
             </th>
             <th></th>
         </tr>

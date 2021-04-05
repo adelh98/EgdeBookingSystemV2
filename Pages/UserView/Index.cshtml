@@ -7,6 +7,8 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
+<h2>Alt utstyr</h2>
+
 <form>
     <p>
         <input type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
@@ -33,10 +35,10 @@
                 @Html.DisplayNameFor(model => model.Equipment[0].Info)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Equipment[0].Category)
+                @Html.DisplayNameFor(model => model.Equipment[0].Category.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Equipment[0].Location)
+                @Html.DisplayNameFor(model => model.Equipment[0].Location.Name)
             </th>
             <th></th>
         </tr>
@@ -57,7 +59,7 @@
                 @Html.DisplayFor(modelItem => item.Location.Name)
             </td>
             <td>
-                <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-egde-small">Details</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-egde-small">Detaljer</a> |
                 <a asp-page="/Bookings/Create" asp-route-id="@item.ID" class="btn btn-egde-small">Book</a>
             </td>
         </tr>
