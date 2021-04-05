@@ -2,148 +2,108 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
-
+.btn:hover {
+    color: #ff7300;
+    background-color: white;
+    border: 1px solid #ff7300;
+}
 .btn-primary {
-    color: #000000;
-    background-color: #ff7300;
-    border: 1px solid #ff7300;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+
 }
 
-.btn-primary-egde {
-    color: #000000;
-    background-color: #ff7300;
-    border: 1px solid #ff7300;
-}
-
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
-}
-
-/*EGDE SIN SIDE*/
-element.style {
-}
-
-.uk-button:not(:disabled) {
-    cursor: pointer;
-}
-
-.uk-button-large {
-    padding: 0 40px;
-    line-height: 53px;
-    font-size: inherit;
-    border-radius: 500px;
-}
-
-.uk-button-secondary {
+.btn-egde {
     background-color: #ff7300;
     color: #000;
     border: 1px solid #ff7300;
-}
-
-.uk-button {
-    margin: 0;
-    border: none;
-    overflow: visible;
-    font: inherit;
-    color: inherit;
-    -webkit-appearance: none;
-    border-radius: 0;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 0 30px;
-    vertical-align: middle;
-    font-size: inherit;
-    line-height: 38px;
-    text-align: center;
-    text-decoration: none;
-    transition: .1s ease-in-out;
-    transition-property: color,background-color,background-position,border-color,box-shadow;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 1px;
-    border-radius: 500px;
-    background-origin: border-box;
-}
-
-.uk-link, a {
-    color: #01233d;
-    text-decoration: none;
     cursor: pointer;
 }
 
-user agent stylesheet
-a:-webkit-any-link {
-    color: -webkit-link;
+.btn-egde-small {
+    background-color: #ff7300;
+    color: #000;
+    border: 1px solid #ff7300;
+    padding: 5px 5px;
     cursor: pointer;
-    text-decoration: underline;
 }
 
-.uk-text-center {
-    text-align: center !important;
+.btn-egde-blå {
+    background-color: #01233d;
+    color: #fafafd;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
 
-.uk-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    .btn-egde-blå:hover {
+        background-color: #135394;
+        color: white;
+        border: 1px solid transparent;
+    }
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
 }

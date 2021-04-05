@@ -20,6 +20,7 @@ namespace EgdeBookingSystemV2
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+        
         }
 
         public IConfiguration Configuration { get; }
@@ -41,7 +42,8 @@ namespace EgdeBookingSystemV2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                app.UseDatabaseErrorPage(); 
+                app.UseBrowserLink();
             }
             else
             {
