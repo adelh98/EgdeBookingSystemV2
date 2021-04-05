@@ -13,10 +13,17 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #000000;
+    background-color: #ff7300;
+    border: 1px solid #ff7300;
 }
+
+.btn-primary-egde {
+    color: #000000;
+    background-color: #ff7300;
+    border: 1px solid #ff7300;
+}
+
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
@@ -68,4 +75,75 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+/*EGDE SIN SIDE*/
+element.style {
+}
+
+.uk-button:not(:disabled) {
+    cursor: pointer;
+}
+
+.uk-button-large {
+    padding: 0 40px;
+    line-height: 53px;
+    font-size: inherit;
+    border-radius: 500px;
+}
+
+.uk-button-secondary {
+    background-color: #ff7300;
+    color: #000;
+    border: 1px solid #ff7300;
+}
+
+.uk-button {
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 30px;
+    vertical-align: middle;
+    font-size: inherit;
+    line-height: 38px;
+    text-align: center;
+    text-decoration: none;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color,background-position,border-color,box-shadow;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 1px;
+    border-radius: 500px;
+    background-origin: border-box;
+}
+
+.uk-link, a {
+    color: #01233d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.uk-text-center {
+    text-align: center !important;
+}
+
+.uk-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }

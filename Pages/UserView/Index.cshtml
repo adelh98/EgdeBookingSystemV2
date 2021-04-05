@@ -9,18 +9,16 @@
 
 <form>
     <p>
-        Name: <input type="text" asp-for="SearchString" placeholder="Search equipment" oninput="this.form.submit();" id="autofocusLastChar" />
-    </p>
-    <p>
-        <label class="control-label"></label>
+        Name: <input type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
+   
+        <label class="control-label">Kategori: </label>
         <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
-            <option value="">  </option>
+            <option value="">Velg  </option>
         </select>
-    </p>
-    <p>
-        <label class="control-label"></label>
+  
+        <label class="control-label">Lokasjon: </label>
         <select asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
-            <option value="">  </option>
+            <option value="">Velg  </option>
         </select>
     </p>
 </form>

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgdeBookingSystemV2", "EgdeBookingSystemV2.csproj", "{0CB0045E-764F-4294-B731-EF12745D1BF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EgdeBookingSystemV2", "EgdeBookingSystemV2.csproj", "{0CB0045E-764F-4294-B731-EF12745D1BF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgdeV2.Test", "..\EgdeV2.Test\EgdeV2.Test.csproj", "{F7CB76C4-40D8-4790-A5C0-D1282FA3D01C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0CB0045E-764F-4294-B731-EF12745D1BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CB0045E-764F-4294-B731-EF12745D1BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB0045E-764F-4294-B731-EF12745D1BF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CB76C4-40D8-4790-A5C0-D1282FA3D01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CB76C4-40D8-4790-A5C0-D1282FA3D01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CB76C4-40D8-4790-A5C0-D1282FA3D01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CB76C4-40D8-4790-A5C0-D1282FA3D01C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
