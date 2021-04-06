@@ -15,9 +15,10 @@ namespace EgdeBookingSystemV2.Models
         [StringLength(50, ErrorMessage = "Utstyrsnavnet må bestå av 3 til 50 tegn", MinimumLength = 3)]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Informasjon/detaljer om utstyret er påkrevd")]
-        [StringLength(50, MinimumLength = 3)]
         public string Info { get; set; }
+
+        [Display(Name = "Modellnummer")]
+        public string ModelNumber { get; set; }
 
         [Required] //Oprettet objekter fra andre klasser for å få tilgang til å hente data(felter) fra de.
         [Display(Name = "Kategori")]
