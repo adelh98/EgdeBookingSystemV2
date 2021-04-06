@@ -25,12 +25,12 @@
 
         <label class="control-label"></label>
         <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
-            <option value="">Velg kategori </option>
+            <option value="">Alle kategorier </option>
         </select>
 
         <label class="control-label"></label>
         <select asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
-            <option value="">Velg lokasjon </option>
+            <option value="">Alle lokasjoner </option>
         </select>
     </p>
 </form>
@@ -42,12 +42,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Equipment[0].Name)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Equipment[0].Info)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Equipment[0].Category.Name)
-            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Equipment[0].Info)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Equipment[0].Category.Name)
+        </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Equipment[0].Location.Name)
             </th>
@@ -57,25 +57,26 @@
     <tbody>
         @foreach (var item in Model.EquipmentSearch)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Info)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Location.Name)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-egde-small">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-egde-small">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-egde-small">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Info)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.Name)
+            </td>
+            <td>
+                <a asp-page="/Bookings/Create" asp-route-id="@item.ID" class="btn btn-egde-small">Book</a> |
+                <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-egde-small">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-egde-small">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-egde-small">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
