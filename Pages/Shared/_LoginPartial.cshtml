@@ -12,13 +12,13 @@
             <a class="nav-link text-dark" asp-area="" asp-page="/UserView/Index">UserView</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-page="/Bookings/Index">Bookings</a>
+            <a class="nav-link text-dark" asp-area="" asp-page="/Bookings/Index">Alle bookinger</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-route-id="@User.Identity.Name" asp-page="/MyPage/Index">Min Side</a>
+            <a class="nav-link text-dark" asp-area="" asp-route-id="@User.Identity.Name" asp-page="/MyPage/Index">Mine bookinger</a>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
