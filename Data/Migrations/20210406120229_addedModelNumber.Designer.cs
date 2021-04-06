@@ -4,14 +4,16 @@ using EgdeBookingSystemV2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EgdeBookingSystemV2.Data.Migrations
 {
     [DbContext(typeof(EgdeBookingSystemConnection))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210406120229_addedModelNumber")]
+    partial class addedModelNumber
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

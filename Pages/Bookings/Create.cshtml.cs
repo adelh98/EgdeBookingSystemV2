@@ -101,7 +101,7 @@ namespace EgdeBookingSystemV2.Pages.Bookings
             _context.Bookings.Add(Booking);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/UserView/Index");
         }
     }
 }

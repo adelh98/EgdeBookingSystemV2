@@ -13,6 +13,12 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment.ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Equipment.ID)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Equipment.Name)
         </dt>
         <dd class="col-sm-10">
@@ -23,6 +29,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Equipment.Info)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment.ModelNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Equipment.ModelNumber)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Equipment.Category)
