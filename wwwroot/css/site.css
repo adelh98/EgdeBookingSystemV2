@@ -51,7 +51,12 @@ a {
         border: 1px solid transparent;
     }
 
-
+.logo-image {
+    
+    overflow: hidden;
+    margin-top: -6px;
+    image-rendering: pixelated;
+}
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
@@ -88,6 +93,11 @@ button.accept-policy {
     line-height: inherit;
 }
 
+
+.egde-primary {
+    background: #01233d;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -107,3 +117,7 @@ body {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
 }
+
+
+
+/*EGDE*/
