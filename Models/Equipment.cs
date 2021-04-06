@@ -17,7 +17,7 @@ namespace EgdeBookingSystemV2.Models
 
         public string Info { get; set; }
 
-        [Display(Name = "Modellnummer")]
+        [Display(Name = "Modell-/Serienummer")]
         public string ModelNumber { get; set; }
 
         [Required] //Oprettet objekter fra andre klasser for å få tilgang til å hente data(felter) fra de.
