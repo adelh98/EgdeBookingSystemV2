@@ -37,7 +37,7 @@ namespace EgdeBookingSystemV2.Pages.Bookings
             {
                 return NotFound();
             }
-           ViewData["EquipmentID"] = new SelectList(_context.Equipments, "ID", "Info");
+           ViewData["EquipmentID"] = new SelectList(_context.Equipments, "ID", "ID");
             return Page();
         }
 
