@@ -20,7 +20,8 @@ namespace EgdeBookingSystemV2.Pages.MyPage
         }
 
 
-        public IList<Booking> BookingList { get;set; }
+        public IList<Booking> ActiveBookings { get;set; }
+        public IList<Booking> HistoricBookings { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -29,11 +30,18 @@ namespace EgdeBookingSystemV2.Pages.MyPage
                 return NotFound();
             }
 
-            BookingList = await _context.Bookings
+            ActiveBookings = await _context.Bookings
                 .Include(b => b.Equipment)
                 .Where(b => b.UserEmail == User.Identity.Name)
                 .Where(b => b.EndDate >= DateTime.Now)
                 .OrderBy(b => b.StartDate)
+                .ToListAsync();
+
+            HistoricBookings = await _context.Bookings
+                .Include(b => b.Equipment)
+                .Where(b => b.UserEmail == User.Identity.Name)
+                .Where(b => b.EndDate < DateTime.Now)
+                .OrderByDescending(b => b.StartDate)
                 .ToListAsync();
 
             return Page();

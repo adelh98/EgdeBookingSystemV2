@@ -6,30 +6,30 @@
     Layout = "_Layout";
 }
 
-<h1>Mine aktive bookinger</h1>
+<h2>Aktive bookinger</h2>
 
-@if (Model.BookingList.Count != 0)
+@if (Model.ActiveBookings.Count != 0)
 {
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.BookingList[0].UserEmail)
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].UserEmail)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.BookingList[0].Equipment)
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].Equipment)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.BookingList[0].StartDate)
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].StartDate)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.BookingList[0].EndDate)
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].EndDate)
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.BookingList)
+            @foreach (var item in Model.ActiveBookings)
             {
                 <tr>
                     <td>
@@ -46,17 +46,75 @@
                     </td>
                     <td>
                         @*<a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |*@
-                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                        <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-egde-small">Fjern</a>
+                        <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a>
+
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    }
+}
 else
 {
-    <h2>Det er ingen aktive bookinger!</h2>
+    <h3>Du har ingen aktive bookinger!</h3>
+}
+
+<div>
+
+</div>
+
+<h2>Historiske bookinger</h2>
+
+@if (Model.HistoricBookings.Count != 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].UserEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].Equipment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].StartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActiveBookings[0].EndDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.HistoricBookings)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Equipment.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td>
+                        @*<a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |*@
+                        <a asp-page="/Bookings/Create" asp-route-id="@item.EquipmentID" class="btn btn-egde-small">Book</a> 
+                        <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a> 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>Du har ingen historiske bookinger!</h3>
 }
 
 
