@@ -65,7 +65,7 @@ namespace EgdeBookingSystemV2.Pages.Equipments
                              select n;
             if (!string.IsNullOrEmpty(SearchString))
             {
-                equipments = equipments.Where(s => s.Name.Contains(SearchString));
+                equipments = equipments.Where(s => s.Name.Contains(SearchString) || s.ModelNumber.Contains(SearchString));
             }
             if (!string.IsNullOrEmpty(CategoryFilter))
             {
