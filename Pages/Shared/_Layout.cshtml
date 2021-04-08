@@ -1,40 +1,64 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+    <style>
+        .top-left {
+            position: fixed;
+            left: 20px;
+            top: 18px;
+            flex: auto;
+        }
+    </style>
 
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Egde TechSpace</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggler navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3 position-relative justify-content-start ">
+                @*<nav class="navbar navbar-expand-sm navbar-toggler navbar-toggleable-sm navbar-light bg-light border-bottom box-shadowz">*@
+                @*Logo*@
+                <div class="navbar logo-image ">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Egde TechSpace</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <div class="logo-image">
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <a href="/UserView/Index">
                             <img width="160" src="https://egde.no/wp-content/uploads/2020/08/Egde-logo-clr-RGB.svg" />
+                            <h2 class="navbar-brand" asp-area="" asp-page="/Index">Tech Space</h2>
                         </a>
                     }
                     else
                     {
                         <img width="160" src="https://egde.no/wp-content/uploads/2020/08/Egde-logo-clr-RGB.svg" />
+                        <h2 class="navbar-brand" asp-area="" asp-page="/Index">Tech Space</h2>
                     }
+                </div>
 
-                    <h2 class="navbar-brand" asp-area="" asp-page="/Index">Tech Space</h2>
+
+                @*NAV-Pages*@
+                <div>
+
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+                    <div class="navbar-collapse collapse d-md-inline-flex flex-sm-row ">
                         <partial name="_LoginPartial" />
+
+
+
+
+
+
+
+
                         @*<ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
@@ -45,27 +69,29 @@
                         @*</ul>*@
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        </header>
 
-    <footer class="border-top footer text-muted">
         <div class="container">
-            @*&copy; 2021 - EgdeBookingSystemV2 - <a asp-area="" asp-page="/Privacy">Privacy</a>*@
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-    </footer>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+
+                <a>Create by Go4IT, version 2.4.2</a>
+                @*&copy; 2021 - EgdeBookingSystemV2 - <a asp-area="" asp-page="/Privacy">Privacy</a>*@
+            </div>
+        </footer>
 
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
 
-    @RenderSection("Scripts", required: false)
-</body>
+        @RenderSection("Scripts", required: false)
+    </body>
 </html>
