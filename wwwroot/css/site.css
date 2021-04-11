@@ -64,6 +64,11 @@ a {
     border-color: #1861ac;
 }
 
+.table-hover-egde{
+      background-color: #9fcdff;
+    
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
