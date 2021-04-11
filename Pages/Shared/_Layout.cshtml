@@ -21,40 +21,21 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-sm navbar-toggler navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3 position-relative justify-content-start ">
-
-                @*Logo*@
-                <div class="navbar logo-image ">
-
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <a href="/UserView/Index">
-                            <img width="160" src="https://egde.no/wp-content/uploads/2020/08/Egde-logo-clr-RGB.svg" />
-                            <h2 class="navbar-brand" asp-area="" asp-page="/Index">Tech Space</h2>
-                        </a>
-                    }
-                    else
-                    {
-                        <img width="160" src="https://egde.no/wp-content/uploads/2020/08/Egde-logo-clr-RGB.svg" />
-                        <h2 class="navbar-brand" asp-area="" asp-page="/Index">Tech Space</h2>
-                    }
-                </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" 
+                      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
 
                 @*NAV-Pages*@
-                <div>
+       
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <partial name="_LoginPartial" />
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="navbar-collapse collapse d-md-inline-flex flex-sm-row ">
-                        <partial name="_LoginPartial" />
-
-
-                    </div>
                 </div>
+                
             </nav>
 
         </header>
