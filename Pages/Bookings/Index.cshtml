@@ -4,25 +4,25 @@
 @{
     ViewData["Title"] = "Index";
 }
+ 
+<h1 class="mt-4">Alle bookinger</h1>
 
-<h1>Alle bookinger</h1>
-
-<table class="table">
+<table class="table table-borderless table-striped  table-hover">
     <thead>
         <tr>
-            <th>
+            <th class="h4 ">
                 @Html.DisplayNameFor(model => model.Booking[0].UserEmail)
             </th>
-            <th>
+            <th class="h4">
                 @Html.DisplayNameFor(model => model.Booking[0].StartDate)
             </th>
-            <th>
+            <th class="h4">
                 @Html.DisplayNameFor(model => model.Booking[0].EndDate)
             </th>
-            <th>
+            <th class="h4">
                 @Html.DisplayNameFor(model => model.Booking[0].Equipment)
             </th>
-            <th></th>
+           
         </tr>
     </thead>
     <tbody>
