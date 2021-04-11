@@ -7,34 +7,47 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
+
+
 <h1>Alt Utstyr</h1>
 
-<form>
-    <p>
-        <input type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
 
-        <label class="control-label"></label>
-        <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
-            <option value="">Alle kategorier </option>
-        </select>
+<p>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
 
-        <label class="control-label"></label>
-        <select asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
-            <option value="">Alle lokasjoner </option>
-        </select>
-    </p>
-</form>
+
+        <div class="input-group mx-2">
+
+            <select class="custom-select" asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
+                <option value="">Alle kategorier </option>
+            </select>
+            
+        </div>
+        <div class="input-group mx-2">
+            
+                <select class="custom-select" asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
+                    <option value="">Alle lokasjoner </option>
+                </select>
+                
+
+        </div>
+
+    </form>
+
+</p>
+
 
 <table class="table">
     <thead>
         <tr>
-           
+
             <th>
                 @Html.DisplayNameFor(model => model.Equipment[0].Name)
             </th>
             <th>
-            @Html.DisplayNameFor(model => model.Equipment[0].ModelNumber)
-        </th>
+                @Html.DisplayNameFor(model => model.Equipment[0].ModelNumber)
+            </th>
 
             <th>
                 @Html.DisplayNameFor(model => model.Equipment[0].Location.Name)
@@ -43,25 +56,26 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.EquipmentSearch) {
-        <tr>
-          
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-            @Html.DisplayFor(modelItem => item.ModelNumber)
-        </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location.Name)
-            </td>
-            <td>
+        @foreach (var item in Model.EquipmentSearch)
+        {
+            <tr>
 
-                <a asp-page="/Bookings/Create" asp-route-id="@item.ID" class="btn btn-egde-small">Book</a>
-                <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a>
-            </td>
-        </tr>
-}
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location.Name)
+                </td>
+                <td>
+
+                    <a asp-page="/Bookings/Create" asp-route-id="@item.ID" class="btn btn-egde-small">Book</a>
+                    <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
