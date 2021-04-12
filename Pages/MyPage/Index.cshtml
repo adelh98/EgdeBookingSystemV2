@@ -6,26 +6,26 @@
     Layout = "_Layout";
 }
 
-<h2>Aktive bookinger</h2>
+<h2 class="mt-4" >Aktive bookinger</h2>
 
 @if (Model.ActiveBookings.Count != 0)
 {
-    <table class="table">
+    <table class="table table-borderless table-striped table-hover" >
         <thead>
             <tr>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].UserEmail)
                 </th>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].Equipment)
                 </th>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].StartDate)
                 </th>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].EndDate)
                 </th>
-                <th></th>
+                
             </tr>
         </thead>
         <tbody>
@@ -57,33 +57,34 @@
 }
 else
 {
-    <h3>Du har ingen aktive bookinger!</h3>
+    <h3 class="mt-2">Du har ingen aktive bookinger!</h3>
 }
 
-<div>
+<div class="mx1 border-dark border-top">
 
 </div>
 
-<h2>Historiske bookinger</h2>
+<h2 class="mt-4">Historiske bookinger</h2>
+
 
 @if (Model.HistoricBookings.Count != 0)
 {
-    <table class="table">
+    <table class="table table-borderless table-striped table-hover" >
         <thead>
             <tr>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].UserEmail)
                 </th>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].Equipment)
                 </th>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].StartDate)
                 </th>
-                <th>
+                <th class="h4">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].EndDate)
                 </th>
-                <th></th>
+                
             </tr>
         </thead>
         <tbody>
