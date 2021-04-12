@@ -18,7 +18,6 @@ namespace EgdeBookingSystemV2.Pages.UserView
         {
             _context = context;
         }
-
         public Equipment Equipment { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)

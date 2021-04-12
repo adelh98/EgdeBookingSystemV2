@@ -7,7 +7,7 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
-<h1>Alt Utstyr</h1>
+<h1 class="mt-4">Alt Utstyr</h1>
 
 <p>
     <a asp-page="Create" class="btn btn-egde-blå ">Legg til utstyr</a>
@@ -19,36 +19,42 @@
 
 
 
-<form>
-    <p>
-        <input type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
-
-        <label class="control-label"></label>
-        <select asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
-            <option value="">Alle kategorier </option>
-        </select>
-
-        <label class="control-label"></label>
-        <select asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
-            <option value="">Alle lokasjoner </option>
-        </select>
-    </p>
-</form>
+<p>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
 
 
-<table class="table">
+        <div class="input-group mx-2">
+
+            <select class="custom-select" asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
+                <option value="">Alle kategorier </option>
+            </select>
+
+        </div>
+        <div class="input-group mx-2">
+
+            <select class="custom-select" asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
+                <option value="">Alle lokasjoner </option>
+            </select>
+
+
+        </div>
+
+    </form>
+
+</p>
+
+
+<table class="table table-striped table-borderless table-hover">
     <thead>
         <tr>
-            <th>
+            <th class="h3">
                 @Html.DisplayNameFor(model => model.Equipment[0].Name)
             </th>
-            @*<th>
-            @Html.DisplayNameFor(model => model.Equipment[0].Info)
+            <th class="h3">
+            @Html.DisplayNameFor(model => model.Equipment[0].ModelNumber)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Equipment[0].Category.Name)
-        </th>*@
-            <th>
+            <th class="h3">
                 @Html.DisplayNameFor(model => model.Equipment[0].Location.Name)
             </th>
             <th></th>
@@ -61,20 +67,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.Info)
+            <td>
+            @Html.DisplayFor(modelItem => item.ModelNumber)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.Name)
-        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Location.Name)
             </td>
             <td>
                 <a asp-page="/Bookings/Create" asp-route-id="@item.ID" class="btn btn-egde-small">Book</a> |
-                <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-egde-small">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-egde-small">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-egde-small">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.ID" >Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="text-xl-right">Delete</a>
             </td>
         </tr>
         }
