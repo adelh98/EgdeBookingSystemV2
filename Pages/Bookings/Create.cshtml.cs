@@ -36,6 +36,8 @@ namespace EgdeBookingSystemV2.Pages.Bookings
             }
 
             Equipment = await _context.Equipments
+                    .Include(e => e.Category)
+                    .Include(e => e.Location)
                     .AsNoTracking()
                     .FirstOrDefaultAsync(m => m.ID == id);
 
