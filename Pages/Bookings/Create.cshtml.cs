@@ -69,6 +69,7 @@ namespace EgdeBookingSystemV2.Pages.Bookings
 
             if (Booking.StartDate > Booking.EndDate)
             {
+
                 return Page();
             }
 

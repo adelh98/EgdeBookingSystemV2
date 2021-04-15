@@ -7,7 +7,7 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
-<h1 class="mt-4">Alt Utstyr</h1>
+<h2 class="mt-4">Alt Utstyr</h2>
 <hr />
 
 <p>
@@ -76,9 +76,9 @@
             </td>
             <td>
                 <a asp-page="/Bookings/Create" asp-route-id="@item.ID" class="btn btn-egde">Book</a> |
-                <a asp-page="./Edit" asp-route-id="@item.ID" >Edit</a> |
+                <a asp-page="./Edit" asp-route-id="@item.ID" >Endre</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID" class="text-xl-right">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="text-xl-right">Slett</a>
             </td>
         </tr>
         }

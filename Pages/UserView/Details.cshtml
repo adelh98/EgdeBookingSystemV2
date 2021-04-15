@@ -5,11 +5,11 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<h2>Detaljer</h2>
+<hr />
 <div>
-    <h4>Equipment</h4>
-    <hr />
+    <h4>Utstyr</h4>
+
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Equipment.ID)
@@ -50,6 +50,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="/Bookings/Create" asp-route-id="@Model.Equipment.ID" class="btn btn-egde-small">Book</a> 
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="/Bookings/Create" asp-route-id="@Model.Equipment.ID" class="btn btn-egde-small">Book</a>
+    <a asp-page="./Index">Tilbake til listen</a>
 </div>
