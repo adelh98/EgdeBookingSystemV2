@@ -29,12 +29,24 @@ a {
     border: 1px solid #ff7300;
     cursor: pointer;
 }
+.btn-egde-curved {
+    background-color: #ff7300;
+    color: #000;
+    border: 1px solid #ff7300;
+    cursor: pointer;
+    padding: 0 20px;
+    line-height: 30px;
+    font-size: inherit;
+    border-radius: 250px;
+}
+
+
 
 .btn-egde-small {
     background-color: #ff7300;
     color: #000;
     border: 1px solid #ff7300;
-    padding: 5px 5px;
+/*    padding: 5px 5px;*/
     cursor: pointer;
 }
 
