@@ -5,12 +5,12 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
-
+<h2>Delete</h2>
+<hr />
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Booking</h4>
-    <hr />
+
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Booking.UserEmail)
@@ -37,10 +37,10 @@
             @Html.DisplayFor(model => model.Booking.Equipment)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Booking.ID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value="Slett" class="btn btn-danger" /> |
         <a asp-page="./Index">Back to List</a>
     </form>
 </div>

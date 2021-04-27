@@ -16,9 +16,11 @@ namespace EgdeBookingSystemV2.Models
         public string UserEmail { get; set; }
         [Required(ErrorMessage = "Vennligst spesifiser startdato")]
         [Display(Name = "Startdato")]
+        [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
         [Required(ErrorMessage = "Vennligst spesifiser sluttdato")]
         [Display(Name = "Sluttdato")]
+        [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
         [Required]
         public int EquipmentID { get; set; }
