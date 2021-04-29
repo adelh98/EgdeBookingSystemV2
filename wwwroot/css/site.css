@@ -76,10 +76,15 @@ a {
     border-color: #1861ac;
 }
 
+.tableFixed2 {
+    table-layout: fixed !important ;
+}
+
 .table-hover-egde{
       background-color: #9fcdff;
     
 }
+
 
 
 
