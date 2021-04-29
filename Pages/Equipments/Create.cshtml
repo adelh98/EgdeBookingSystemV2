@@ -5,9 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Opprette utstyr</h2>
+<h2 class="mt-4">Opprette utstyr</h2>
 
-<h4>Utstyr</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,8 +23,8 @@
                 <span asp-validation-for="Equipment.Info" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Equipment.ModelNumber" class="control-label">Modellnummer</label>
-                <input asp-for="Equipment.ModelNumber" placeholder="Legg til modell-/serienummer e.l" class="form-control" />
+                <label asp-for="Equipment.ModelNumber" class="control-label">Serienummer</label>
+                <input asp-for="Equipment.ModelNumber" placeholder="Legg til serienummer" class="form-control" />
                 <span asp-validation-for="Equipment.ModelNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -42,14 +41,14 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Lage" class="btn btn-primary" />
+                <input type="submit" value="Lagre" class="btn btn-egde-blå" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Tilbake</a>
+    <a asp-page="Index">Tilbake til listen</a>
 </div>
 
 @section Scripts {

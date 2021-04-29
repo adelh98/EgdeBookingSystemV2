@@ -5,11 +5,11 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Fjern</h2>
+<h2 class="mt-2">Slett utstyr</h2>
 <hr />
-<h3>Er du sikker på om du vil fjerne utstyret?</h3>
+
 <div>
-    <h4>Ustyret</h4>
+    <h4>Utstyrsdetaljer</h4>
 
     <dl class="row">
         <dt class="col-sm-2">
@@ -37,13 +37,13 @@
             @Html.DisplayFor(model => model.Equipment.ModelNumber)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Equipment.Category)
+            @Html.DisplayNameFor(model => model.Equipment.Category.Name)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Equipment.Category.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Equipment.Location)
+            @Html.DisplayNameFor(model => model.Equipment.Location.Name)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Equipment.Location.Name)
@@ -52,7 +52,13 @@
 
     <form method="post">
         <input type="hidden" asp-for="Equipment.ID" />
-        <input type="submit" value="Slett" class="btn btn-danger" /> |
-        <a asp-page="./Index">Tilbake til listen</a>
+        <input type="submit" value="Slett" class="btn btn-danger" />
+        
     </form>
+</div>
+
+<div class="mt-3">
+
+    <a asp-page="./Index">Tilbake til listen</a>
+
 </div>

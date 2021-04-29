@@ -5,9 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Category</h4>
+<h2 class="mt-4">Legg til kategori</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,14 +17,14 @@
                 <span asp-validation-for="Category.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Lagre" class="btn btn-egde-blå" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Tilbake til listen</a>
 </div>
 
 @section Scripts {

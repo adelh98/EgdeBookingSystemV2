@@ -15,6 +15,8 @@ namespace EgdeBookingSystemV2.Models
         [StringLength(50, ErrorMessage = "Utstyrsnavnet må bestå av 3 til 50 tegn", MinimumLength = 3)]
         public string Name { get; set; }
 
+
+        [Display(Name = "Informasjon")]
         public string Info { get; set; }
 
         [Display(Name = "Serienummer")]
@@ -23,6 +25,7 @@ namespace EgdeBookingSystemV2.Models
         [Required] //Oprettet objekter fra andre klasser for å få tilgang til å hente data(felter) fra de.
         [Display(Name = "Kategori")]
         public int CategoryID { get; set; }
+        [Display(Name = "Kategori")]
         public Category Category { get; set; }
 
         [Required]
