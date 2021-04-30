@@ -5,11 +5,11 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Detaljer</h2>
-
+<h2 class="mt-4">Detaljer</h2>
+<hr />
 <div>
-    <h4>Booking</h4>
-    <hr />
+    <h4>Bookinginformajson</h4>
+
     <dl class="row mx-1">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Booking.UserEmail)
@@ -32,7 +32,7 @@
 
     </dl>
 
-    <h4>Utstyrsinfo: </h4>
+    <h4>Utstyrsinformasjon </h4>
 
     <dl class="row mx-1">
         <dt class="col-sm-2">
@@ -64,6 +64,6 @@
     </dl>
 </div>
 <div>
-    
+
     <a asp-page="./Index">Tilbake til listen</a>
 </div>

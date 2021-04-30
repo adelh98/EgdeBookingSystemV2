@@ -7980,6 +7980,7 @@ button.bg-dark:focus {
   margin-right: 0.5rem !important;
 }
 
+
 .mb-2,
 .my-2 {
   margin-bottom: 0.5rem !important;
@@ -7987,8 +7988,9 @@ button.bg-dark:focus {
 
 .ml-2,
 .mx-2 {
-  margin-left: 0.5rem !important;
+    margin-left: 0.75rem !important;
 }
+
 
 .m-3 {
   margin: 1rem !important;
@@ -8061,6 +8063,7 @@ button.bg-dark:focus {
 .mx-5 {
   margin-left: 3rem !important;
 }
+
 
 .p-0 {
   padding: 0 !important;

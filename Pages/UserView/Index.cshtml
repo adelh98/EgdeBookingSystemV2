@@ -9,11 +9,10 @@
 
 
 
-<h2 class="mt-4">Alt Utstyr</h2>
+<h2 class="mt-4 mx-2">Alt utstyr</h2>
 <hr />
 
 
-<p>
     <form class="form-inline">
         <input class="form-control mr-sm-2" type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
 
@@ -36,14 +35,15 @@
 
     </form>
 
-</p>
+
 
 
 <table class="table table-striped table-borderless table-hover";>
     <thead>
-        <tr>
+        <tr class="">
 
             <th class="h3">
+
                 @Html.DisplayNameFor(model => model.Equipment[0].Name)
             </th>
             <th class="h3">

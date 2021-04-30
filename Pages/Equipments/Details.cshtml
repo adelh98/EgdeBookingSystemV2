@@ -5,10 +5,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Detaljer</h2>
+<h2 class="mt-2">Utstyrsdetaljer</h2>
 
 <div>
-    <h4>Utstyr</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -50,6 +49,8 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Equipment.ID">Endre</a> |
-    <a asp-page="./Index">Tilbake til listen</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Equipment.ID" class="btn btn-egde-blå">Endre</a>
+
 </div>
+
+<div class="mt-3"><a asp-page="./Index">Tilbake til listen</a></div>
