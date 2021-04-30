@@ -23,26 +23,4 @@
     <PackageReference Include="Moq" Version="4.16.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="EgdeBooking.Tests\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="EgdeBooking.Tests\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="EgdeBooking.Tests\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="EgdeBooking.Tests\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="EgdeBooking.Tests\obj\EgdeBooking.Tests.csproj.nuget.dgspec.json" />
-    <_ContentIncludedByDefault Remove="EgdeBooking.Tests\obj\project.assets.json" />
-    <_ContentIncludedByDefault Remove="EgdeBooking.Tests\obj\project.packagespec.json" />
-  </ItemGroup>
-
 </Project>
