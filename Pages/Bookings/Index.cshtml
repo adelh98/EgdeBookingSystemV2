@@ -4,15 +4,24 @@
 @{
     ViewData["Title"] = "Index";
 }
-@if ((string)TempData["Referrer"] == "Slettet")
+
+@*Viser varsel dersom booking, endring eller sletting har skjedd*@
+@if ((string)TempData["Sletting"] == "Slettet")
 {
     <div class="alert alert-success mt-4">
         <strong>Booking slettet</strong>
     </div>
-}else if ((string)TempData["Referrer2"] == "Endret")
+}
+else if ((string)TempData["Endring"] == "Endret")
 {
     <div class="alert alert-success mt-4">
         <strong>Bookingen endret</strong>
+    </div>
+}
+else if ((string)TempData["Booking"] == "Booket")
+{
+    <div class="alert alert-success mt-4">
+        <strong>Utstyret er booket!</strong>
     </div>
 }
 

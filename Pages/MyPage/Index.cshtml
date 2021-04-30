@@ -7,11 +7,18 @@
 }
 
 <style>
-   .tableFixed {
+    .tableFixed {
         table-layout: fixed;
     }
 </style>
 
+
+@if ((string)TempData["Fjern"] == "Fjernet")
+{
+    <div class="alert alert-success mt-4">
+        <strong>Booking slettet</strong>
+    </div>
+}
 
 <h2 class="mt-4 mx-2">
     Aktive bookinger
@@ -46,7 +53,7 @@
 
             </tr>
         </thead>
-        <tbody >
+        <tbody>
             @foreach (var item in Model.ActiveBookings)
             {
                 <tr>
@@ -54,7 +61,7 @@
                         @Html.DisplayFor(modelItem => item.UserEmail)
                     </td>
 
-                    <td >
+                    <td>
                         @Html.DisplayFor(modelItem => item.Equipment.Name)
                     </td>
 
@@ -65,7 +72,7 @@
                         @Html.DisplayFor(modelItem => item.EndDate)
                     </td>
                     <td>
-                        
+
                         <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-egde">Fjern</a>
                         <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a>
 
@@ -112,7 +119,7 @@ else
 
             </tr>
         </thead>
-        <tbody >
+        <tbody>
             @foreach (var item in Model.HistoricBookings)
             {
                 <tr>

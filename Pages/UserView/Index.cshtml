@@ -7,33 +7,38 @@
 
 <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
 
-
+@if ((string)TempData["Booking"] == "Booket")
+{
+<div class="alert alert-success mt-4">
+    <strong>Utstyret er booket!</strong>
+</div>
+}
 
 <h2 class="mt-4 mx-2">Alt utstyr</h2>
 <hr />
 
 
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
+<form class="form-inline">
+    <input class="form-control mr-sm-2" type="text" asp-for="SearchString" placeholder="Søk etter utstyr" oninput="this.form.submit();" id="autofocusLastChar" />
 
 
-        <div class="input-group mx-2">
+    <div class="input-group mx-2">
 
-            <select class="custom-select" asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
-                <option value="">Alle kategorier </option>
-            </select>
-            
-        </div>
-        <div class="input-group mx-2">
-            
-                <select class="custom-select" asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
-                    <option value="">Alle lokasjoner </option>
-                </select>
-                
+        <select class="custom-select" asp-for="CategoryFilter" asp-items="Model.Categories" oninput="this.form.submit();">
+            <option value="">Alle kategorier </option>
+        </select>
 
-        </div>
+    </div>
+    <div class="input-group mx-2">
 
-    </form>
+        <select class="custom-select" asp-for="LocationFilter" asp-items="Model.Locations" oninput="this.form.submit();">
+            <option value="">Alle lokasjoner </option>
+        </select>
+
+
+    </div>
+
+</form>
 
 
 
@@ -53,7 +58,7 @@
             <th class="h3">
                 @Html.DisplayNameFor(model => model.Equipment[0].Location.Name)
             </th>
-            
+
         </tr>
     </thead>
     <tbody>
