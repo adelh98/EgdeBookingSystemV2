@@ -21,7 +21,7 @@
 @if (Model.ActiveBookings.Count != 0)
 {
 
-    <table class="tableFixed table table-borderless table-striped table-hover ">
+    <table class="table tableFixed table-borderless table-striped table-hover ">
         <thead>
             <tr>
 
@@ -29,7 +29,7 @@
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].UserEmail)
                 </th>
 
-                <th class="h4 first">
+                <th class="h4 ">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].Equipment.Name)
                 </th>
 
@@ -54,7 +54,7 @@
                         @Html.DisplayFor(modelItem => item.UserEmail)
                     </td>
 
-                    <td>
+                    <td >
                         @Html.DisplayFor(modelItem => item.Equipment.Name)
                     </td>
 
@@ -65,8 +65,8 @@
                         @Html.DisplayFor(modelItem => item.EndDate)
                     </td>
                     <td>
-                        @*<a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |*@
-                        <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-danger">Fjern</a>
+                        
+                        <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-egde">Fjern</a>
                         <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a>
 
                     </td>
@@ -91,14 +91,14 @@ else
 
 @if (Model.HistoricBookings.Count != 0)
 {
-    <table class="tableFixed table table-borderless table-striped table-hover ">
+    <table class="table tableFixed table-borderless table-striped table-hover ">
         <thead>
             <tr>
-                <th class="h4" hidden>
+                <th class="h4 " hidden>
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].UserEmail)
                 </th>
 
-                <th class="h4 first">
+                <th class="h4 ">
                     @Html.DisplayNameFor(model => model.ActiveBookings[0].Equipment.Name)
                 </th>
 
@@ -130,7 +130,7 @@ else
                     </td>
                     <td>
                         @*<a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |*@
-                        <a asp-page="/Bookings/Create" asp-route-id="@item.EquipmentID" class="btn btn-egde-small">Book</a>
+                        <a asp-page="/Bookings/Create" asp-route-id="@item.EquipmentID" class="btn btn-egde-blå">Book</a>
                         <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a>
                     </td>
                 </tr>
