@@ -5,13 +5,26 @@
     ViewData["Title"] = "Create";
 }
 
-<h2 class="mt-4">Opprett booking</h2>
 
+
+@if ((string)TempData["BookingOpptatt"] == "Opptatt")
+{
+    <div class="alert alert-danger mt-4">
+        <strong>Booking feilet, utstyret er opptatt på valg dato.</strong>
+    </div>
+} else if ((string)TempData["BakoverITid"] == "Bakover")
+{
+<div class="alert alert-danger mt-4">
+    <strong>Booking feilet, velg dato frem i tid.</strong>
+</div>
+}
+
+<h2 class="mt-4">Opprett booking</h2>
 
 <hr />
 <div class="row">
     <div class=" ">
-        <form method="post" >
+        <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="row col-lg-3 mx-1" hidden>
                 <label asp-for="Booking.UserEmail" class="control-label" hidden></label>
@@ -76,7 +89,7 @@
 
 
             <div class="form-group mx-4">
-                <input type="submit" value="Book" class="btn btn-egde" />
+                <input type="submit" value="Book" class="btn btn-egde-blå" />
             </div>
         </form>
     </div>
@@ -97,43 +110,43 @@
 
 @if (Model.BookingList.Count != 0)
 {
-<div>
-    <h4 class="mt-3 mx-2">Aktive bookinger av utstyret:</h4>
-    <hr />
-    <table class="table table-borderless table-hover table-striped">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.BookingList[0].UserEmail)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BookingList[0].StartDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BookingList[0].EndDate)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.BookingList)
-            {
+    <div>
+        <h4 class="mt-3 mx-2">Aktive bookinger av utstyret</h4>
+        <hr />
+        <table class="table table-borderless table-hover table-striped">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UserEmail)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EndDate)
-                    </td>
-
+                    <th>
+                        @Html.DisplayNameFor(model => model.BookingList[0].UserEmail)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BookingList[0].StartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BookingList[0].EndDate)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BookingList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserEmail)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndDate)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 else
 {
@@ -142,8 +155,8 @@ else
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 
-        <script src="~/lib/jquery.js"></script>
-        <script src="~/lib/jquery.validate.js"></script>
-        <script src="~/lib/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery.js"></script>
+    <script src="~/lib/jquery.validate.js"></script>
+    <script src="~/lib/jquery.validate.unobtrusive.js"></script>
 
 }

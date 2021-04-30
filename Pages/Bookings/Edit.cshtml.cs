@@ -68,6 +68,8 @@ namespace EgdeBookingSystemV2.Pages.Bookings
                 }
             }
 
+            TempData["Endring"] = "Endret";
+
             return RedirectToPage("./Index");
         }
 

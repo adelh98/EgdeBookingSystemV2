@@ -54,7 +54,7 @@ namespace EgdeBookingSystemV2.Pages.Bookings
                 await _context.SaveChangesAsync();
             }
 
-            TempData["Referrer"] = "Slettet";
+            TempData["Sletting"] = "Slettet";
             
             return RedirectToPage("./Index");
         }

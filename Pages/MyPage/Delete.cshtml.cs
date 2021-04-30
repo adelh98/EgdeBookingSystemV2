@@ -54,6 +54,7 @@ namespace EgdeBookingSystemV2.Pages.MyPage
                 await _context.SaveChangesAsync();
             }
 
+            TempData["Fjern"] = "Fjernet";
             return RedirectToPage("./Index");
         }
     }

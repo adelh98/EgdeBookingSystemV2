@@ -4,15 +4,24 @@
 @{
     ViewData["Title"] = "Index";
 }
-@if ((string)TempData["Referrer"] == "Slettet")
+
+@*Viser varsel dersom booking, endring eller sletting har skjedd*@
+@if ((string)TempData["Sletting"] == "Slettet")
 {
     <div class="alert alert-success mt-4">
         <strong>Booking slettet</strong>
     </div>
-}else if ((string)TempData["Referrer2"] == "Endret")
+}
+else if ((string)TempData["Endring"] == "Endret")
 {
     <div class="alert alert-success mt-4">
         <strong>Bookingen endret</strong>
+    </div>
+}
+else if ((string)TempData["Booking"] == "Booket")
+{
+    <div class="alert alert-success mt-4">
+        <strong>Utstyret er booket!</strong>
     </div>
 }
 
@@ -56,7 +65,7 @@
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-egde-blå">Endre</a>
                     <a asp-page="./Details" asp-route-id="@item.ID">Detaljer</a>
-                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-danger">Fjern</a>
+                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-egde">Fjern</a>
                 </td>
             </tr>
         }

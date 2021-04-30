@@ -67,9 +67,9 @@ namespace EgdeBookingSystemV2.Pages.Bookings
                 .OrderBy(b => b.StartDate)
                 .ToListAsync();
 
-            if (Booking.StartDate > Booking.EndDate)
+            if (Booking.StartDate > Booking.EndDate || Booking.StartDate < DateTime.Today)
             {
-
+                TempData["BakoverITid"] = "Bakover";
                 return Page();
             }
 
@@ -88,6 +88,7 @@ namespace EgdeBookingSystemV2.Pages.Bookings
                         }
                         else
                         {
+                            TempData["BookingOpptatt"] = "Opptatt";
                             return Page();
                         }
                     }
@@ -104,6 +105,8 @@ namespace EgdeBookingSystemV2.Pages.Bookings
             _context.Bookings.Add(Booking);
             await _context.SaveChangesAsync();
 
+
+            TempData["Booking"] = "Booket";
             return RedirectToPage("/UserView/Index");
         }
     }
