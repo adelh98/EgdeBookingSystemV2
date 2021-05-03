@@ -22,16 +22,16 @@
 
         <ul class="navbar-nav mr-auto">
             <li class="nav-item" >
-                <a class="nav-link " asp-area="" asp-page="/Equipments/Index">AdminView</a>
+                <a class="nav-link h5 mt-1" asp-area="" asp-page="/Equipments/Index">Admin</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " asp-area="" asp-page="/Bookings/Index">Alle bookinger</a>
+                <a class="nav-link h5 mt-1" asp-area="" asp-page="/Bookings/Index">Alle bookinger</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " asp-area="" asp-page="/UserView/Index">UserView</a>
+                <a class="nav-link h5 mt-1" asp-area="" asp-page="/UserView/Index">Utstyr</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " asp-area="" asp-route-id="@User.Identity.Name" asp-page="/MyPage/Index">Mine bookinger</a>
+                <a class="nav-link h5 mt-1" asp-area="" asp-route-id="@User.Identity.Name" asp-page="/MyPage/Index">Mine bookinger</a>
             </li>
 
 
@@ -41,7 +41,7 @@
 
     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
 
-        <button type="submit" class="btn btn-egde-blå my-2 my-sm-0">Logg ut</button>
+        <button type="submit" class="btn btn-egde my-2 my-sm-0">Logg ut</button>
     </form>
 
 
